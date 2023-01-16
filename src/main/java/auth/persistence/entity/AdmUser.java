@@ -19,7 +19,7 @@ public class AdmUser {
 	@Column(name = "id")
 	private Integer id;
 	
-	@Column(name = "user_name")
+	@Column(name = "username")
 	private String userName;
 	
 	@Column(name = "name")
@@ -28,7 +28,6 @@ public class AdmUser {
 	@Column(name = "last_name")
 	private String lastName;
 	
-	@Column(name = "password")
 	private String password;
 	
 	@Column(name = "status")
@@ -42,6 +41,9 @@ public class AdmUser {
 	
 	@Column(name = "guid")
 	private String guid;
+	
+	@Column(name = "role")
+	private Integer roleId;
 	
 	@ManyToOne
 	@JoinColumn(name = "role", insertable = false, updatable = false)
@@ -126,4 +128,14 @@ public class AdmUser {
 	public void setRole(AdmRole role) {
 		this.role = role;
 	}
+	
+	public int getRoleId() {
+		return roleId;
+	}
+	
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
+	}
+	
+	
 }

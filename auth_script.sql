@@ -35,6 +35,8 @@ CREATE TABLE `adm_user` (
 	FOREIGN KEY (`role`) REFERENCES `adm_role` (`id`)
 );
 
+ALTER TABLE adm_user MODIFY `password` VARCHAR(500); 
+ALTER TABLE adm_user MODIFY `role` INT UNSIGNED; 
 
 CREATE TABLE adm_session (
 	`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 

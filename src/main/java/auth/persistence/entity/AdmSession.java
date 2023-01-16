@@ -20,9 +20,11 @@ public class AdmSession {
 	@Column(name = "secret_key")
 	private String secretKey;
 	
+	/*
 	@OneToMany(mappedBy = "session")
 	private List<KrnSession> session;
-
+	*/
+	
 	public Integer getId() {
 		return id;
 	}
@@ -38,12 +40,13 @@ public class AdmSession {
 	public void setSecretKey(String secretKey) {
 		this.secretKey = secretKey;
 	}
-
+	
+	/*
 	public List<KrnSession> getSession() {
 		return session;
 	}
 
 	public void setSession(List<KrnSession> session) {
 		this.session = session;
-	}
+	}*/
 }

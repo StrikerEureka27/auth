@@ -1,22 +1,36 @@
 package auth.persistence;
 
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import auth.domain.User;
+import auth.domain.repository.User_repository;
 import auth.persistence.crud.AdmUserCrud_repository;
 import auth.persistence.entity.AdmUser;
+import auth.persistence.mapper.UserMapper;
 
 
 @Repository
-public class AdmUser_repository {
+public class AdmUser_repository implements User_repository{
 	
+	@Autowired
 	private AdmUserCrud_repository admUserCrudrepo;
 	
-	public Iterable<AdmUser> getAll(){
-		return admUserCrudrepo.findAll();
+	@Autowired
+	private UserMapper mapper;
+
+	@Override
+	public void deleteUser(int userId) {
+		admUserCrudrepo.deleteById(userId);
 	}
-	
-	public List<AdmUser> getUserById(int isUser) {
-		return admUserCrudrepo.findById(isUser);
+
+	@Override
+	public User createNewUser(User user) {
+		AdmUser admUser = mapper.toAdmUser(user);
+		return mapper.toUser(admUserCrudrepo.save(admUser));
 	}
+
 	
 }

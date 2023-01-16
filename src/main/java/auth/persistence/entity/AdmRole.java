@@ -24,7 +24,7 @@ public class AdmRole {
 	private String code;
 	
 	@OneToMany(mappedBy = "role")
-	private List<AdmUser> user;
+	private List<AdmUser> users;
 
 	public Integer getId() {
 		return id;
@@ -51,10 +51,18 @@ public class AdmRole {
 	}
 
 	public List<AdmUser> getUser() {
-		return user;
+		return users;
 	}
 
 	public void setUser(List<AdmUser> user) {
-		this.user = user;
+		this.users = user;
+	}
+
+	public List<AdmUser> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<AdmUser> users) {
+		this.users = users;
 	}
 }
