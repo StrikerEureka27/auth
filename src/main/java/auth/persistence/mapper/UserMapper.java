@@ -1,16 +1,14 @@
 package auth.persistence.mapper;
 import java.util.List;
 
-import org.mapstruct.InheritConfiguration;
+
+import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
-import org.springframework.stereotype.Component;
 
 import auth.domain.User;
 import auth.persistence.entity.AdmUser;
-
-
 
 
 @Mapper(componentModel = "spring", uses =  { RoleMapper.class })
@@ -30,7 +28,7 @@ public interface UserMapper {
 	User toUser(AdmUser user);
 	List<User> toUsers(List<AdmUser> users);
 	
-	@InheritConfiguration
+	@InheritInverseConfiguration
 	// Converts from domain to entity
 	AdmUser toAdmUser(User user);
 }

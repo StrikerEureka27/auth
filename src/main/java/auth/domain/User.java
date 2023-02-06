@@ -10,8 +10,8 @@ public class User {
 	private String userLastName;
 	private String userPassword;
 	private boolean userStatus;
+	private String userGuid;
 	private int phone;
-	private String guidCode;
 	private AdmRole role;
 	private int roleId;
 
@@ -71,14 +71,6 @@ public class User {
 		this.phone = phone;
 	}
 
-	public String getGuidCode() {
-		return guidCode;
-	}
-
-	public void setGuidCode(String guidCode) {
-		this.guidCode = guidCode;
-	}
-
 	public AdmRole getRole() {
 		return role;
 	}
@@ -94,4 +86,13 @@ public class User {
 	public void setRoleId(int role) {
 		this.roleId = role;
 	}
+
+	public String getUserGuid() {
+		return userGuid;
+	}
+
+	public void setUserGuid(String userGuid) {
+		this.userGuid = userGuid;
+	}
+
 }

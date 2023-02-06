@@ -1,6 +1,5 @@
 package auth.persistence;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -29,7 +28,14 @@ public class AdmUser_repository implements User_repository{
 	@Override
 	public User createNewUser(User user) {
 		AdmUser admUser = mapper.toAdmUser(user);
+		System.out.println("from repo layer");
+		System.out.println(admUser.getName());
 		return mapper.toUser(admUserCrudrepo.save(admUser));
+	}
+
+	@Override
+	public User getUserByIdentifier(int id) {
+		return mapper.toUser(admUserCrudrepo.findById(id));
 	}
 
 	

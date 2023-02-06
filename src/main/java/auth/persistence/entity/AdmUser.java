@@ -1,6 +1,6 @@
 package auth.persistence.entity;
 
-import java.util.List;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -39,9 +39,9 @@ public class AdmUser {
 	@Column(name = "mail")
 	private String mail;
 	
-	@Column(name = "guid")
-	private String guid;
-	
+	// @Column(name = "guid")
+	// private String guid;
+
 	@Column(name = "role")
 	private Integer roleId;
 	
@@ -113,13 +113,13 @@ public class AdmUser {
 		this.mail = mail;
 	}
 
-	public String getGuid() {
-		return guid;
-	}
+	// public String getGuid() {
+	// 	return guid;
+	// }
 
-	public void setGuid(String guid) {
-		this.guid = guid;
-	}
+	// public void setGuid(String guid) {
+	// 	this.guid = guid;
+	// }
 
 	public AdmRole getRole() {
 		return role;

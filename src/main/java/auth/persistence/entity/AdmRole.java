@@ -1,13 +1,12 @@
 package auth.persistence.entity;
 
-import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+
 
 @Entity(name = "adm_role")
 public class AdmRole {
@@ -23,8 +22,8 @@ public class AdmRole {
 	@Column(name = "code")
 	private String code;
 	
-	@OneToMany(mappedBy = "role")
-	private List<AdmUser> users;
+	// @OneToMany(mappedBy = "role")
+	// private List<AdmUser> users;
 
 	public Integer getId() {
 		return id;
@@ -49,20 +48,11 @@ public class AdmRole {
 	public void setCode(String code) {
 		this.code = code;
 	}
+	// public List<AdmUser> getUsers() {
+	// 	return users;
+	// }
 
-	public List<AdmUser> getUser() {
-		return users;
-	}
-
-	public void setUser(List<AdmUser> user) {
-		this.users = user;
-	}
-
-	public List<AdmUser> getUsers() {
-		return users;
-	}
-
-	public void setUsers(List<AdmUser> users) {
-		this.users = users;
-	}
+	// public void setUsers(List<AdmUser> users) {
+	// 	this.users = users;
+	// }
 }

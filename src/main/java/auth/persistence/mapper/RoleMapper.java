@@ -20,7 +20,7 @@ public interface RoleMapper {
 	Role toRole(AdmRole role);
 	
 	@InheritInverseConfiguration
-	@Mapping(target = "users", ignore = true)
+	// @Mapping(target = "users", ignore = true)
 	AdmRole toAdmRole(Role role);
 	
 }
